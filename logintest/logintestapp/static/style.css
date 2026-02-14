@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: cursive;
+    background-color: blanchedalmond;
+    font-size: 25px;
+}
+
+header {
+    background-color: rgb(175, 132, 80);
+    height: 150px;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.personal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.personal-name {
+    font-weight: bolder;
+}
+
+.buttons {
+    display: flex;
+    gap: 30%;
+    justify-content: center;
+}

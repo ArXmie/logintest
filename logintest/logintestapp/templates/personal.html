@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <header class="home">
+        <p>Пустая ссылка</p>
+            <p><a href="{% url 'personal' %}">Профиль</a></p>
+            <p>Пустая ссылка</p>
+    </header>
+    <main class="personal">
+            {% if user.is_authenticated %}
+        <p class="personal-name">Привет, {{ user.username }}</p>
+        <div class="buttons">
+            <p><a href="{% url 'home' %}">Назад</a></p>
+            <form action="{% url 'logout' %}" method="post" style="margin: 0;">
+                {% csrf_token %}
+                <button type="submit">Выйти</button>
+            </form>
+        </div>
+    {% else %}
+    {% endif %}
+    </main>
+</body>
+</html>

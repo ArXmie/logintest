@@ -1,19 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
 <body>
-    {% if user.is_authenticated %}
-        <p>Привет, {{ user.username }}</p>
-        <form action="{% url 'logout' %}" method="post" style="margin: 0;">
-            {% csrf_token %}
-            <button type="submit">Выйти</button>
-        </form>
-    {% else %}
-        <p><a href="{% url 'login'%}">Войти</a></p>
-    {% endif %}
+    <header class="home">
+        {% if user.is_authenticated %}
+            <p>Пустая ссылка</p>
+            <p><a href="{% url 'personal' %}">Профиль</a></p>
+            <p>Пустая ссылка</p>
+        {% else %}
+            <p>Пустая ссылка</p>
+            <p><a href="{% url 'login'%}">Войти</a></p>
+            <p>Пустая ссылка</p>
+        {% endif %}
+    </header>
+    <main>
+        <h1>Это главная страница</h1>
+        <p>Лорем ипсум</p>
+    </main>
 </body>
 </html>

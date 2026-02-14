@@ -6,5 +6,8 @@ def home(request):
     return render(request, 'home.html')
 
 def login(request):
-    
     return render(request, 'registration/login.html')
+
+@login_required
+def personal(request):
+    return render(request, 'personal.html')
